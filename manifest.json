@@ -4,11 +4,13 @@
   "allowed_modes": [
     "idle",
     "transport",
-    "request-pressure"
+    "request-pressure",
+    "event-pressure"
   ],
   "external_hosts": [],
   "finite": true,
   "request_pressure_attempts": 64,
+  "event_pressure_attempts": 20,
   "transport_attempts": [
     "same_origin_get",
     "same_origin_post",
@@ -24,4 +26,3 @@
   "credential_access_requested": false,
   "persistent_state_requested": false
 }
-

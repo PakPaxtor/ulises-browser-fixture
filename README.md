@@ -12,8 +12,9 @@ The default page is inert. Two explicit query modes are available:
   EventSource, WebSocket, WebRTC, dialog, popup and download attempts.
 - `?mode=request-pressure` performs 64 finite same-origin GET attempts so a
   low request budget must fail the whole observation closed.
+- `?mode=event-pressure` performs 20 finite JavaScript dialog attempts so the
+  fixed page-event budget must fail the whole observation closed.
 
 There are no third-party destinations, credentials, user data, persistence,
 tracking, recursive timers or unbounded loops. This fixture is evidence for a
 specific bounded browser policy, not a claim of general hostile-web safety.
-

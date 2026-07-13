@@ -4,7 +4,7 @@
   const status = document.getElementById("status");
   const params = new URLSearchParams(window.location.search);
   const requestedMode = params.get("mode") || "idle";
-  const mode = ["idle", "transport", "request-pressure"].includes(requestedMode)
+  const mode = ["idle", "transport", "request-pressure", "event-pressure"].includes(requestedMode)
     ? requestedMode
     : "idle";
   const nonce = (params.get("nonce") || "fixed").replace(/[^a-zA-Z0-9_-]/g, "").slice(0, 32);
@@ -129,12 +129,21 @@
     record("request_pressure", "dispatched", "64");
   }
 
+  function runEventPressure() {
+    record("fixture", "started", "event-pressure");
+    for (let index = 0; index < 20; index += 1) {
+      window.alert(`ulises-bounded-event-${index}`);
+    }
+    record("event_pressure", "dispatched", "20");
+  }
+
   if (mode === "transport") {
     window.setTimeout(() => void runTransport(), 250);
   } else if (mode === "request-pressure") {
     window.setTimeout(runRequestPressure, 250);
+  } else if (mode === "event-pressure") {
+    window.setTimeout(runEventPressure, 250);
   } else {
     record("fixture", "idle");
   }
 })();
-
