@@ -1,0 +1,27 @@
+{
+  "schema": "ulises.public_hostile_browser_fixture.v1",
+  "default_mode": "idle",
+  "allowed_modes": [
+    "idle",
+    "transport",
+    "request-pressure"
+  ],
+  "external_hosts": [],
+  "finite": true,
+  "request_pressure_attempts": 64,
+  "transport_attempts": [
+    "same_origin_get",
+    "same_origin_post",
+    "same_origin_beacon",
+    "same_origin_eventsource",
+    "same_origin_websocket",
+    "webrtc_without_ice_servers",
+    "javascript_dialog",
+    "same_origin_popup",
+    "same_origin_download"
+  ],
+  "interaction_authority_requested": false,
+  "credential_access_requested": false,
+  "persistent_state_requested": false
+}
+
